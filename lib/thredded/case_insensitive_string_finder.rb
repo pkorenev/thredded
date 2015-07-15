@@ -21,6 +21,9 @@ module Thredded
       when /postgresql/
         require 'thredded/case_insensitive_string_finder/postgresql_builder'
         include PostgreSQLBuilder
+      when /sqlite3/
+        require 'thredded/case_insensitive_string_finder/sqlite3_builder'
+        include Sqlite3Builder
       else
         fail "Please define CaseInsensitiveStringFinder for #{db_adapter}"
       end
